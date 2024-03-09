@@ -1,15 +1,13 @@
-import { useState } from 'react'
 import './App.css'
-import { Card } from './components/Card'
+import { Auth } from './components/Auth'
+import { Main } from './components/Main'
 
 
 function App() {
-  const [commentCount, setCommentCount] = useState(0)
-  const [loginStatus, setLoginStatus] = useState(false)
-  
-
   return <div>
-       
+       <Auth>
+          <Main />
+       </Auth>
   </div>
 }
 

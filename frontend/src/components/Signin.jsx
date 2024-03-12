@@ -18,8 +18,12 @@ export function Signin({loggedIn, setLoggedIn, setUserToken}){
             .then((res)=>{
                 setUserToken(res.data.token)
                 setLoggedIn(true)
+                console.log(res);
             })
-        }}>Sign in</button>
+            .catch((e)=>{   
+                alert("wrong inputs")
+            })
+        }}>Sign in</button> 
         </>}
     </div>
 }

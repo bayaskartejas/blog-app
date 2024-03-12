@@ -59,6 +59,9 @@ app.post("/signin", async(req,res)=>{
     let exist = await User.exists({
         username: req.body.username,
         password: req.body.password
+
+
+        
     })
     if(exist != null){
         let token = jwt.sign({username: req.body.username}, secretKey)

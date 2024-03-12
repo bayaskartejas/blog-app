@@ -3,10 +3,12 @@ const {User, inputSchema, secretKey, Post} = require("./db")
 const  {authMiddleware}  = require("./authMiddleware")
 const jwt = require("jsonwebtoken")
 const bodyParser = require("body-parser")
+const cors = require("cors")
 
 const app = express()
 app.use(express.json())
 app.use(bodyParser.json())
+app.use(cors())
 
 app.post("/signup", async (req,res)=>{
     let existCheck1 = await User.exists({

@@ -51,7 +51,7 @@ app.post("/signup", async (req,res)=>{
         }
     }
     else{
-        res.status(404).json({msg: "user already exists"})
+        res.status(404).json({msg: "user already exists:  "})
     }
 })
 
@@ -61,7 +61,7 @@ app.post("/signin", async(req,res)=>{
         password: req.body.password
 
 
-        
+
     })
     if(exist != null){
         let token = jwt.sign({username: req.body.username}, secretKey)

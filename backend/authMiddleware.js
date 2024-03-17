@@ -8,7 +8,7 @@ async function authMiddleware(req, res, next){
         next()
     }
     catch(e){
-        console.log("jwt token not provided");
+        console.log("jwt not provided");
     }
 }
 

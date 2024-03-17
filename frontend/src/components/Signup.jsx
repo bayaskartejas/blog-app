@@ -1,6 +1,7 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { Signin } from "./Signin"
 import axios from "axios"
+import prmlogo2f from '../assets/prmlogo2f.png'
 
 export function Signup({signedUp, setSignedUp}){
         const nameRef = useRef()
@@ -12,17 +13,30 @@ export function Signup({signedUp, setSignedUp}){
         const usernameRef = useRef()
         const passwordRef = useRef()
 
+        useEffect(()=>{
+            document.body.className = "page";
+            
+        },[])
+
     return <div>
+        <div className="logoContainer">
+         <img id="logo" src={prmlogo2f}></img>            
+        </div>
+
+         <div className="container">
+            <div className="auth">
         <h1>Sign Up</h1>
-        Name: <input type="text" placeholder="name" ref={nameRef}/><br />
-        Year: <input type="number" placeholder="year" ref={yearRef} min="1" max="4"/><br />
-        Section: <input type="text" placeholder="section" ref={sectionRef}/><br />
-        Roll No.<input type="number" placeholder="roll No" ref={rollNoRef}/><br />
-        Branch: <input type="text" placeholder="branch" ref={branchRef}/><br />
-        Email: <input type="text" placeholder="email" ref={emailRef}/><br />
-        Username: <input type="text" placeholder="username" ref={usernameRef}/><br />
-        Password<input type="text" placeholder="password" ref={passwordRef}/><br />
-        <button onClick={()=>{
+        <div id="input"> 
+        <input type="text" placeholder="name" ref={nameRef} id="name"/><br />
+        <input id="year" type="number" placeholder="year" ref={yearRef} min="1" max="4"/>
+        <input id="section" type="text" placeholder="section" ref={sectionRef}/><br />
+        <input id="rollNo" type="number" placeholder="roll No" ref={rollNoRef} min="1"/>
+        <input id="branch" type="text" placeholder="branch" ref={branchRef}/><br />
+        <input id="email" type="text" placeholder="email" ref={emailRef}/><br />
+        <input id="username" type="text" placeholder="username" ref={usernameRef}/><br />
+        <input id="password" type="text" placeholder="password" ref={passwordRef}/>          
+        </div>
+        <button style={{paddingBottom: "10px"}} onClick={()=>{
             axios.post("http://localhost:3000/signup", {
                 name: nameRef.current.value,
                 year: parseInt(yearRef.current.value),
@@ -37,10 +51,14 @@ export function Signup({signedUp, setSignedUp}){
                 console.log(res.data);
                 setSignedUp(true)
             })
-        }}>Create Account</button><br /> 
-        Already a user, <button onClick={()=>{
+        }}>Create Account</button><br />
+        <strong>Already a user, </strong><button onClick={()=>{
             setSignedUp(true)
         }}> Sign in</button>
 
     </div>
+    </div>
+    </div>
+   
+
 }

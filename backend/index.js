@@ -55,7 +55,7 @@ app.post("/signup", async (req,res)=>{
     }
 })
 
-app.post("/signin", async(req,res)=>{
+app.post("/signin", async(req,res)=>{   
     let exist = await User.exists({
         username: req.body.username,
         password: req.body.password

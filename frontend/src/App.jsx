@@ -1,4 +1,5 @@
 import './App.css'
+import './index.css'
 import { Auth } from './components/Auth'
 import { Main } from './components/Main'
 

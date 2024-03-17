@@ -6,8 +6,9 @@ export function Signin({loggedIn, setLoggedIn, setUserToken}){
     const usernameRef = useRef()
     const passwordRef = useRef()
     return <div>
-        {loggedIn ? <Main /> : <>
-        <h1>Sign in</h1>
+        {loggedIn ? <Main/> : <div className="container">
+            <div className="auth">
+            <h1>Sign in</h1>
         <input type="text" placeholder="username" ref={usernameRef}/><br />
         <input type="password" placeholder="password" ref={passwordRef}/><br />
         <button onClick={()=>{
@@ -18,12 +19,12 @@ export function Signin({loggedIn, setLoggedIn, setUserToken}){
             .then((res)=>{
                 setUserToken(res.data.token)
                 setLoggedIn(true)
-                console.log(res);
             })
             .catch((e)=>{   
                 alert("wrong inputs")
             })
         }}>Sign in</button> 
-        </>}
+            </div>
+        </div>}
     </div>
 }

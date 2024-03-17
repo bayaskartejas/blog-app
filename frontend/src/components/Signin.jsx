@@ -6,7 +6,7 @@ export function Signin({loggedIn, setLoggedIn, setUserToken}){
     const usernameRef = useRef()
     const passwordRef = useRef()
     return <div>
-        {loggedIn ? <Main/> : <div className="container">
+        {loggedIn ? <Main/> : <div className="container-signin">
             <div className="auth">
             <h1>Sign in</h1>
         <input type="text" placeholder="username" ref={usernameRef}/><br />

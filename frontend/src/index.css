@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -13,16 +19,65 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  #cardDiv{
+    border: 1px solid black;
+    width: max-content;
+ 
+    margin-top:10px ;  
+
+  }
+
   .buttonDiv{
+    position: absolute;
+    left: 30px;
+    top: 125px;
+    right: 30px;
+    height: 75px;
+    /* width: max-content;
+    height: max-content; */
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px
   }
   
+  #createPost{
+    /* background: linear-gradient(to bottom right, #28c5d8, #f17b8f, #d6e175); */
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 1.2em 2.4em;
+    font-size: 1em;
+    transition: box-shadow 0.3s ease;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+  }
+  #createPost:hover{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+  }
+
   .container{
     padding: 50px;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #28c5d8, #f17b8f, #d6e175);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    transition: box-shadow 0.4s ease;
+    border-radius: 20px;
+  }
+
+  .container-signin{
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #28c5d8, #f17b8f, #d6e175);
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -50,14 +105,20 @@
     width: fit-content;
 
   }
-  /* body{
-    margin: 0%;
-    padding: 0%;
+  body {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
     min-height: 100vh;
-  } */
+    background: linear-gradient(to bottom right, #28c5d8, #f17b8f, #d6e175);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    z-index: -1;
+  }
 
 
   a {
@@ -88,15 +149,30 @@
     padding-top: 30px;
   }
   
-  .topbar{
-    background-color: #1a1a1a;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  #topbarEx {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+    right: 30px;
     display: flex;
-    height: 50px;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f4f5;
+    border: 1px solid black;
     border-radius: 10px;
+    padding: 10px; /* Adjust padding as needed */
+    z-index: 1; /* Ensure the topbar appears above other content */
   }
+
+  #topbarIn {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px; /* Optional: limit the maximum width of the content */
+    text-align: center;
+  }
+  
 
   h1 {
     font-size: 3.2em;
@@ -104,6 +180,10 @@
     
   }
   
+  #main{
+    z-index: 1  ;
+  }
+
   button {
     margin: 5px;
     border-radius: 8px;
@@ -116,7 +196,20 @@
     cursor: pointer;
     transition: border-color 0.25s;
   }
-  
+
+  #bigDiv{
+    position: absolute;
+    top: 230px;
+    left:30px;
+    right: 30px;
+    bottom: 30px;
+    /* display: flex;
+    justify-content: center; */
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 1;
+  }
+
   button:hover {
     border-color: #646cff;
   }
@@ -139,7 +232,7 @@
     background-color: transparent;
     color: white;
     border: 2px solid #ccc;
-    padding: 5px 10px;
+    padding: 2px 10px;
     border-radius: 5px;
     font-family: Arial, sans-serif;
     font-size: 17px;
@@ -152,19 +245,19 @@
   } 
 
   #section{
-    width: 60px;
+    width: 107.5px;
     border: 2px solid #ccc;
   }
   #year{
-    width: 135px;
+    width: 107.5px;
     border: 2px solid #ccc;
   }
   #rollNo{
-    width: 65px ;
+    width: 107.5px; 
     border: 2px solid #ccc;
   }
   #branch{
-    width: 130px;
+    width: 107.5px;
     border: 2px solid #ccc;
   }
   #input{
@@ -172,7 +265,12 @@
     margin-bottom: 10px;
   }
   #search{
-    border: 1px solid #ccc;
+    border: 1px solid black;
+    background-color: #f5f4f5;
+    color: black;
+  }
+  #search::placeholder{
+    color: black;
   }
   
   

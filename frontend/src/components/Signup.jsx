@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import { Signin } from "./Signin"
 import axios from "axios"
-import prmlogo2f from '../assets/prmlogo2f.png'
+import LOGO from '../assets/LOGO.png'
 
 export function Signup({signedUp, setSignedUp}){
         const nameRef = useRef()
@@ -15,13 +15,13 @@ export function Signup({signedUp, setSignedUp}){
 
         useEffect(()=>{
             document.body.className = "page";
-            
+
         },[])
 
     return <div>
-        <div className="logoContainer">
-         <img id="logo" src={prmlogo2f}></img>            
-        </div>
+        {/* <div className="logoContainer">
+         <img id="logo" src={LOGO}></img>            
+        </div> */}
 
          <div className="container">
             <div className="auth">
